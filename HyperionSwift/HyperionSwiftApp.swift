@@ -7,9 +7,10 @@
 
 import SwiftUI
 
+@available(iOS 14.0, *)
 @main
-struct HyperionSwiftApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+struct Example_SwiftUIApp: App {
+    @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
 
     var body: some Scene {
         WindowGroup {

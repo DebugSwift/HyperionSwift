@@ -12,11 +12,20 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .font(.largeTitle)
-                .padding()
-                .padding()
+            HStack {
+                Image(systemName: "globe")
+                    .imageScale(.large)
+                    .font(.largeTitle)
+                    .padding()
+                    .padding()
+
+                Image(systemName: "globe")
+                    .imageScale(.large)
+                    .font(.largeTitle)
+                    .padding()
+                    .padding()
+            }
+
             Text("Hello, world!")
                 .font(.largeTitle)
         }
@@ -25,7 +34,7 @@ struct ContentView: View {
             if let topViewController = getTopViewController() {
                 print("Top View Controller: \(topViewController)")
 
-                let controller = WindowManager.presentController
+                let controller = MeasurementWindowManager.presentController
                 controller.attachedWindow = topViewController.view.window
             }
         }
