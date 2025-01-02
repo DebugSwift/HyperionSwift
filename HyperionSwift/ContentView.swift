@@ -11,26 +11,36 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            HStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .font(.largeTitle)
-                    .padding()
-                    .padding()
+            Rectangle()
+                .fill(Color.gray.opacity(0.2))
+                .frame(height: 100)
+                .overlay(
+                    HStack {
+                        Spacer()
+                        Image(systemName: "globe")
+                            .imageScale(.large)
+                            .font(.largeTitle)
+                            .padding(0)
 
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .font(.largeTitle)
-                    .padding()
-                    .padding()
-            }
+                        Spacer(minLength: 80)
+
+                        Image(systemName: "globe")
+                            .imageScale(.large)
+                            .font(.largeTitle)
+                            .padding(0)
+
+                        Spacer()
+                    }
+                )
 
             Text("Hello, world!")
                 .font(.largeTitle)
         }
         .padding()
         .onAppear {
-            MeasurementWindowManager.attachedWindow = UIWindow.keyWindow
+            if let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) {
+                MeasurementWindowManager.attachedWindow = window
+            }
         }
     }
 

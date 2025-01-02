@@ -38,10 +38,18 @@ class MeasurementElementsFactory {
 
         containerView.frame = CGRect(x: 0, y: 0, width: labelWidth, height: labelHeight)
 
-        label.frame = CGRect(x: horizontalPadding, y: verticalPadding, width: label.frame.width, height: label.frame.height)
+        label.frame = CGRect(
+            x: horizontalPadding,
+            y: verticalPadding,
+            width: label.frame.width,
+            height: label.frame.height
+        )
         containerView.addSubview(label)
 
-        containerView.center = CGPoint(x: containerView.superview?.bounds.midX ?? 0, y: containerView.superview?.bounds.midY ?? 0)
+        containerView.center = CGPoint(
+            x: containerView.superview?.bounds.midX ?? 0,
+            y: containerView.superview?.bounds.midY ?? 0
+        )
 
         return containerView
     }
@@ -91,16 +99,16 @@ class MeasurementElementsFactory {
         left.addLine(to: CGPoint(x: globalSelectedRect.origin.x, y: mainView.frame.size.height))
 
         let right = UIBezierPath()
-        right.move(to: CGPoint(x: CGRectGetMaxX(globalSelectedRect), y: 0))
-        right.addLine(to: CGPoint(x: CGRectGetMaxX(globalSelectedRect), y: mainView.frame.size.height))
+        right.move(to: CGPoint(x: globalSelectedRect.maxX, y: 0))
+        right.addLine(to: CGPoint(x: globalSelectedRect.maxX, y: mainView.frame.size.height))
 
         let top = UIBezierPath()
         top.move(to: CGPoint(x: 0, y: globalSelectedRect.origin.y))
         top.addLine(to: CGPoint(x: mainView.frame.size.height, y: globalSelectedRect.origin.y))
 
         let bottom = UIBezierPath()
-        bottom.move(to: CGPoint(x: 0, y: CGRectGetMaxY(globalSelectedRect)))
-        bottom.addLine(to: CGPoint(x: mainView.frame.size.height, y: CGRectGetMaxY(globalSelectedRect)))
+        bottom.move(to: CGPoint(x: 0, y: globalSelectedRect.maxY))
+        bottom.addLine(to: CGPoint(x: mainView.frame.size.height, y: globalSelectedRect.maxY))
 
         let shapes = [left, top, right, bottom].map { path -> CAShapeLayer in
             let shape = CAShapeLayer()

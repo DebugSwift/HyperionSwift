@@ -69,7 +69,7 @@ final class MeasurementWindow: UIWindow {
 final class CustomViewController: UIViewController, MeasurementViewDelegate {
     var attachedWindow: UIWindow? {
         didSet {
-            if let attachedWindow {
+            if attachedWindow != nil {
                 view = MeasurementsView(delegate: self)
             }
         }

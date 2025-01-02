@@ -235,7 +235,7 @@ class MeasurementManager {
     }
 
     func addMeasureLabel(in view: UIView, value: String, center: CGPoint) {
-        guard let attachedWindow = delegate?.attachedWindow else {
+        guard delegate?.attachedWindow != nil else {
             reset()
             return
         }
@@ -252,7 +252,7 @@ class MeasurementManager {
     }
 
     func addShape(in view: UIView, forPath path: UIBezierPath) {
-        guard let attachedWindow = delegate?.attachedWindow else {
+        guard delegate?.attachedWindow != nil else {
             reset()
             return
         }

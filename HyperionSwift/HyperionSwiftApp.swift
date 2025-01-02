@@ -10,8 +10,6 @@ import SwiftUI
 @available(iOS 14.0, *)
 @main
 struct Example_SwiftUIApp: App {
-    @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
-
     var body: some Scene {
         WindowGroup {
             ContentView()
