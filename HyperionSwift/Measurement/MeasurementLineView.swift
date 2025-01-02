@@ -12,19 +12,19 @@ class MeasurementsView: UIView {
     private let styleManager = StyleManager()
     private lazy var measurementLabelFactory = MeasurementElementsFactory(styleManager: styleManager)
     private lazy var measurementManager = MeasurementManager(
-        _extension: _extension,
+        delegate: delegate,
         measurementFactory: measurementLabelFactory,
         styleManager: styleManager
     )
 
-    private var _extension: PluginExtension?
+    private weak var delegate: MeasurementViewDelegate?
 
     private var selectedView: UIView?
     private var compareView: UIView?
 
-    required init(_extension: PluginExtension?) {
+    required init(delegate: MeasurementViewDelegate?) {
         super.init(frame: .zero)
-        self._extension = _extension
+        self.delegate = delegate
         setup()
     }
 
@@ -49,10 +49,13 @@ class MeasurementsView: UIView {
     }
 
     @objc private func tapGesture(_ tapGesture: UITapGestureRecognizer) {
-        guard let mainWindow = _extension?.attachedWindow else { return }
+        guard let attachedWindow = delegate?.attachedWindow else {
+            measurementManager.reset()
+            return
+        }
 
         let point = tapGesture.location(in: self)
-        let selectedViews = ViewHelper.findSubviews(in: mainWindow, intersectingPoint: point)
+        let selectedViews = ViewHelper.findSubviews(in: attachedWindow, intersectingPoint: point)
 
         handleViewSelection(selectedViews.first)
     }
@@ -94,12 +97,17 @@ class MeasurementsView: UIView {
     }
 
     private func displayMeasurementViews(for selectedView: UIView?, comparedTo compareView: UIView?) {
+        guard let attachedWindow = delegate?.attachedWindow else {
+            measurementManager.reset()
+            return
+        }
+
         measurementManager.clearMeasurementViews()
 
         guard let selectedView = selectedView else { return }
 
-        let globalSelectedRect = selectedView.superview?.convert(selectedView.frame, to: _extension?.attachedWindow)
-        let globalComparisonViewRect = compareView?.superview?.convert(compareView?.frame ?? CGRect.zero, to: _extension?.attachedWindow)
+        let globalSelectedRect = selectedView.superview?.convert(selectedView.frame, to: attachedWindow)
+        let globalComparisonViewRect = compareView?.superview?.convert(compareView?.frame ?? CGRect.zero, to: attachedWindow)
 
         let viewsToMeasure: (UIView, UIView)
         if measurementManager.frame(globalSelectedRect, insideFrame: globalComparisonViewRect) {
@@ -114,9 +122,9 @@ class MeasurementsView: UIView {
     private func placeMeasurements(for views: (UIView, UIView)) {
         let (view1, view2) = views
 
-        measurementManager.placeTopMeasurementBetweenSelectedView(view1, comparisonView: view2)
-        measurementManager.placeBottomMeasurementBetweenSelectedView(view1, comparisonView: view2)
-        measurementManager.placeLeftMeasurementBetweenSelectedView(view1, comparisonView: view2)
-        measurementManager.placeRightMeasurementBetweenSelectedView(view1, comparisonView: view2)
+        measurementManager.placeTopMeasurementBetweenSelectedView(in: self, view1, comparisonView: view2)
+        measurementManager.placeBottomMeasurementBetweenSelectedView(in: self, view1, comparisonView: view2)
+        measurementManager.placeLeftMeasurementBetweenSelectedView(in: self, view1, comparisonView: view2)
+        measurementManager.placeRightMeasurementBetweenSelectedView(in: self, view1, comparisonView: view2)
     }
 }

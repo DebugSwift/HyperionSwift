@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    let plugin = PluginExtensionWindow()
 
     var body: some View {
         VStack {
@@ -31,28 +30,26 @@ struct ContentView: View {
         }
         .padding()
         .onAppear {
-            if let topViewController = getTopViewController() {
-                print("Top View Controller: \(topViewController)")
-
-                let controller = MeasurementWindowManager.presentController
-                controller.attachedWindow = topViewController.view.window
-            }
+            MeasurementWindowManager.attachedWindow = UIWindow.keyWindow
         }
     }
 
-    func getTopViewController() -> UIViewController? {
-        var topController: UIViewController? = UIApplication.shared.windows.first { $0.isKeyWindow }?.rootViewController
-
-        while let presentedViewController = topController?.presentedViewController {
-            topController = presentedViewController
-        }
-
-        return topController
-    }
 }
 
-class PluginExtensionWindow: PluginExtension {
-    var attachedWindow: UIWindow? = UIApplication.shared.windows.first { $0.isKeyWindow }
+extension UIWindow {
+    static var isEnable = true
+    open override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        super.motionEnded(motion, with: event)
+
+        if motion == .motionShake {
+            UIWindow.isEnable.toggle()
+            MeasurementWindowManager.attachedWindow = UIWindow.isEnable ? UIWindow.keyWindow : nil
+        }
+    }
+
+    static var keyWindow: UIWindow? {
+        return UIApplication.shared.windows.first
+    }
 }
 
 #Preview {

@@ -8,17 +8,35 @@
 import Foundation
 import UIKit
 
-enum MeasurementWindowManager {
-    static var rootNavigation: UINavigationController? {
+public enum MeasurementWindowManager {
+
+    public static var attachedWindow: UIWindow? {
+        didSet {
+            presentController.attachedWindow = attachedWindow
+            let isEnabled = attachedWindow != nil
+
+            window.isHidden = !isEnabled
+        }
+    }
+
+    static var currentWindow: UIWindow? {
+        if #available(iOS 13.0, *) {
+            return UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+        } else {
+            return UIApplication.shared.keyWindow
+        }
+    }
+
+    private static var rootNavigation: UINavigationController? {
         let navigation = window.rootViewController as? UINavigationController
         return navigation
     }
 
-    static var presentController: CustomViewController {
+    private static var presentController: CustomViewController {
         return rootNavigation!.topViewController! as! CustomViewController
     }
 
-    static let window: MeasurementWindow = {
+    private static let window: MeasurementWindow = {
         let window: MeasurementWindow
         if #available(iOS 13.0, *),
            let scene = currentWindow?.windowScene {
@@ -33,14 +51,6 @@ enum MeasurementWindowManager {
 
         return window
     }()
-
-    static var currentWindow: UIWindow? {
-        if #available(iOS 13.0, *) {
-            return UIApplication.shared.windows.filter { $0.isKeyWindow }.first
-        } else {
-            return UIApplication.shared.keyWindow
-        }
-    }
 }
 
 final class MeasurementWindow: UIWindow {
@@ -56,13 +66,19 @@ final class MeasurementWindow: UIWindow {
     }
 }
 
-final class CustomViewController: UIViewController, PluginExtension {
-    var attachedWindow: UIWindow?
+final class CustomViewController: UIViewController, MeasurementViewDelegate {
+    var attachedWindow: UIWindow? {
+        didSet {
+            if let attachedWindow {
+                view = MeasurementsView(delegate: self)
+            }
+        }
+    }
 
     var contentView: MeasurementsView { view as! MeasurementsView }
 
     override func loadView() {
         super.loadView()
-        view = MeasurementsView(_extension: self)
+        view = MeasurementsView(delegate: self)
     }
 }

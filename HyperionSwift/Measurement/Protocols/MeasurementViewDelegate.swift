@@ -7,6 +7,6 @@
 
 import UIKit
 
-protocol PluginExtension: AnyObject {
+protocol MeasurementViewDelegate: AnyObject {
     var attachedWindow: UIWindow? { get }
 }
