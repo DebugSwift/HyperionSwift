@@ -1,11 +1,12 @@
 //
 //  ContentView.swift
-//  HyperionSwift
+//  Example
 //
 //  Created by Matheus Gois on 01/01/25.
 //
 
 import SwiftUI
+import HyperionSwift
 
 struct ContentView: View {
     var body: some View {
@@ -20,24 +21,24 @@ struct ContentView: View {
                             .imageScale(.large)
                             .font(.largeTitle)
                             .padding(0)
-
+                        
                         Spacer(minLength: 80)
-
+                        
                         Image(systemName: "globe")
                             .imageScale(.large)
                             .font(.largeTitle)
                             .padding(0)
-
+                        
                         Spacer()
                     }
                 )
-
-            Text("Hello, world!")
+            
+            Text("Click to Open")
                 .font(.largeTitle)
                 .onTapGesture {
                     HyperionSwift.shared.present()
                 }
-
+            
         }
         .padding()
         .onAppear {
@@ -46,21 +47,6 @@ struct ContentView: View {
     }
 }
 
-extension UIWindow {
-    static var isEnable = true
-    override open func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        super.motionEnded(motion, with: event)
-
-        if motion == .motionShake {
-            UIWindow.isEnable.toggle()
-            MeasurementWindowManager.attachedWindow = UIWindow.isEnable ? UIWindow.keyWindow : nil
-        }
-    }
-
-    static var keyWindow: UIWindow? {
-        return UIApplication.shared.windows.first
-    }
-}
 
 #Preview {
     ContentView()

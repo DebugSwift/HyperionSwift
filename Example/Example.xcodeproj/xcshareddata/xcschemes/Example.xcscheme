@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2E0558E72D25E6F8006FE15A"
-               BuildableName = "HyperionSwift.app"
-               BlueprintName = "HyperionSwift"
-               ReferencedContainer = "container:HyperionSwift.xcodeproj">
+               BuildableName = "Example.app"
+               BlueprintName = "Example"
+               ReferencedContainer = "container:Example.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2E0558E72D25E6F8006FE15A"
-            BuildableName = "HyperionSwift.app"
-            BlueprintName = "HyperionSwift"
-            ReferencedContainer = "container:HyperionSwift.xcodeproj">
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
+            ReferencedContainer = "container:Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2E0558E72D25E6F8006FE15A"
-            BuildableName = "HyperionSwift.app"
-            BlueprintName = "HyperionSwift"
-            ReferencedContainer = "container:HyperionSwift.xcodeproj">
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
+            ReferencedContainer = "container:Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

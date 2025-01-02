@@ -7,37 +7,37 @@
 
 import UIKit
 
-class HyperionSwift {
+public class HyperionSwift {
 
     private init() {}
-    static let shared = HyperionSwift()
+    public static let shared = HyperionSwift()
 
     private lazy var menu = MenuViewController(delegate: self)
     private lazy var menuPresenter: SideMenuPresenting = SideMenuPresenter(
         menuViewControllerFactory: menu
     )
 
-    func setup() {
+    public func setup() {
         if let controller = topViewControoler() {
             setup(in: controller)
         }
     }
 
-    func present() {
+    public func present() {
         if let controller = topViewControoler() {
             present(from: controller)
         }
     }
 
-    func setup(in controller: UIViewController) {
+    public func setup(in controller: UIViewController) {
         menuPresenter.setup(in: controller)
     }
 
-    func present(from controller: UIViewController) {
+    public func present(from controller: UIViewController) {
         menuPresenter.present(from: controller)
     }
 
-    func topViewControoler() -> UIViewController? {
+    private func topViewControoler() -> UIViewController? {
         UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.rootViewController
     }
 }

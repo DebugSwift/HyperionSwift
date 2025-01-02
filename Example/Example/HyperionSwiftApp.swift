@@ -1,6 +1,6 @@
 //
-//  HyperionSwiftApp.swift
-//  HyperionSwift
+//  ExampleApp.swift
+//  Example
 //
 //  Created by Matheus Gois on 01/01/25.
 //
