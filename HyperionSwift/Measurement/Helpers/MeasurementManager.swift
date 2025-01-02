@@ -89,13 +89,15 @@ class MeasurementManager {
             let topMeasurementPath = measurementFactory.measurementPath(startPoint: topSelectedView, endPoint: topCompareView)
             addShape(
                 in: view,
-                forPath: topMeasurementPath)
+                forPath: topMeasurementPath
+            )
 
             let value = String(format: "%0.1fpt", abs(topCompareView.y - topSelectedView.y))
             let center = CGPoint(x: topCompareView.x, y: topSelectedView.y + (topCompareView.y - topSelectedView.y) / 2)
             addMeasureLabel(
                 in: view,
-                value: value, center: center)
+                value: value, center: center
+            )
 
         } else if globalSelectedRect.origin.y >= globalComparisonViewRect.origin.y + globalComparisonViewRect.size.height {
             let belowCompareView = CGPoint(x: topSelectedView.x, y: globalComparisonViewRect.origin.y + globalComparisonViewRect.size.height)
@@ -103,13 +105,15 @@ class MeasurementManager {
             let topMeasurementPath = measurementFactory.measurementPath(startPoint: topSelectedView, endPoint: belowCompareView)
             addShape(
                 in: view,
-                forPath: topMeasurementPath)
+                forPath: topMeasurementPath
+            )
 
             let value = String(format: "%0.1fpt", abs(belowCompareView.y - topSelectedView.y))
             let center = CGPoint(x: belowCompareView.x, y: topSelectedView.y + (belowCompareView.y - topSelectedView.y) / 2)
             addMeasureLabel(
                 in: view,
-                value: value, center: center)
+                value: value, center: center
+            )
         }
     }
 
@@ -130,21 +134,25 @@ class MeasurementManager {
             let bottomMeasurementPath = measurementFactory.measurementPath(startPoint: belowSelectedView, endPoint: comparisonBottom)
             addShape(
                 in: view,
-                forPath: bottomMeasurementPath)
+                forPath: bottomMeasurementPath
+            )
 
             addMeasureLabel(
                 in: view,
-                value: String(format: "%0.1fpt", abs(belowSelectedView.y - comparisonBottom.y)), center: CGPoint(x: comparisonBottom.x, y: belowSelectedView.y + ((comparisonBottom.y - belowSelectedView.y) / 2)))
+                value: String(format: "%0.1fpt", abs(belowSelectedView.y - comparisonBottom.y)), center: CGPoint(x: comparisonBottom.x, y: belowSelectedView.y + ((comparisonBottom.y - belowSelectedView.y) / 2))
+            )
         } else if belowSelectedView.y <= globalComparisonViewRect.origin.y {
             let comparisonTop = CGPoint(x: belowSelectedView.x, y: globalComparisonViewRect.origin.y)
             let bottomMeasurementPath = measurementFactory.measurementPath(startPoint: belowSelectedView, endPoint: comparisonTop)
             addShape(
                 in: view,
-                forPath: bottomMeasurementPath)
+                forPath: bottomMeasurementPath
+            )
 
             addMeasureLabel(
                 in: view,
-                value: String(format: "%0.1fpt", abs(belowSelectedView.y - comparisonTop.y)), center: CGPoint(x: comparisonTop.x, y: belowSelectedView.y + ((comparisonTop.y - belowSelectedView.y) / 2)))
+                value: String(format: "%0.1fpt", abs(belowSelectedView.y - comparisonTop.y)), center: CGPoint(x: comparisonTop.x, y: belowSelectedView.y + ((comparisonTop.y - belowSelectedView.y) / 2))
+            )
         }
     }
 

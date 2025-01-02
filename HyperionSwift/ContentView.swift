@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-
     var body: some View {
         VStack {
             Rectangle()
@@ -35,20 +34,21 @@ struct ContentView: View {
 
             Text("Hello, world!")
                 .font(.largeTitle)
+                .onTapGesture {
+                    HyperionSwift.shared.present()
+                }
+
         }
         .padding()
         .onAppear {
-            if let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) {
-                MeasurementWindowManager.attachedWindow = window
-            }
+            HyperionSwift.shared.setup()
         }
     }
-
 }
 
 extension UIWindow {
     static var isEnable = true
-    open override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+    override open func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         super.motionEnded(motion, with: event)
 
         if motion == .motionShake {

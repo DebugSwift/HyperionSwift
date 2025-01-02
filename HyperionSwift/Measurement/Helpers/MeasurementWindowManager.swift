@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 public enum MeasurementWindowManager {
-
     public static var attachedWindow: UIWindow? {
         didSet {
             presentController.attachedWindow = attachedWindow
