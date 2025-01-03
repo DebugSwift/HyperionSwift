@@ -2,10 +2,11 @@
 
 Based: https://github.com/willowtreeapps/Hyperion-iOS
 
+# Features aready done:
 
-Measurements ✅
-Slow Animations - ⚒
-View Inspector - ⚒
+- Measurements ✅ <br>
+- Slow Animations - ⚔️ <br>
+- View Inspector - ⚔️ <br>
 
 
 <div style="display: flex; justify-content: space-between;">
