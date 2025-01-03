@@ -2,7 +2,7 @@
 
 Based: https://github.com/willowtreeapps/Hyperion-iOS
 
-# Features aready done:
+# Features already done:
 
 - Measurements ✅ <br>
 - Slow Animations - ⚔️ <br>
