@@ -1,15 +1,12 @@
 //
 //  ExampleApp.swift
-//  Example
-//
-//  Created by Matheus Gois on 01/01/25.
+//  Copyright © 2025 DoorDash. All rights reserved.
 //
 
 import SwiftUI
 
-@available(iOS 14.0, *)
 @main
-struct Example_SwiftUIApp: App {
+struct ExampleApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

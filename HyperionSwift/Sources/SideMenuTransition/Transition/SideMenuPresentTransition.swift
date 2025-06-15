@@ -7,14 +7,15 @@
 
 import UIKit
 
+@MainActor
 public final class SideMenuPresentTransition: NSObject,
     UIViewControllerAnimatedTransitioning {
-    static let fromViewTag = UUID().hashValue
+    nonisolated static let fromViewTag = UUID().hashValue
 
     public init(
         dismissInteractor: SideMenuDismissInteracting,
         menuAnimator: SideMenuAnimating,
-        viewAnimator: UIViewAnimating.Type
+        viewAnimator: UIView.Type
     ) {
         self.dismissInteractor = dismissInteractor
         self.menuAnimator = menuAnimator
@@ -24,7 +25,7 @@ public final class SideMenuPresentTransition: NSObject,
 
     let dismissInteractor: SideMenuDismissInteracting
     let menuAnimator: SideMenuAnimating
-    let viewAnimator: UIViewAnimating.Type
+    let viewAnimator: UIView.Type
 
     // MARK: - UIViewControllerAnimatedTransitioning
 

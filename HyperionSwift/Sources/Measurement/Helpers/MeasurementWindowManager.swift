@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+@MainActor
 public enum MeasurementWindowManager {
     public static var attachedWindow: UIWindow? {
         didSet {
@@ -19,11 +20,11 @@ public enum MeasurementWindowManager {
     }
 
     static var currentWindow: UIWindow? {
-        if #available(iOS 13.0, *) {
-            return UIApplication.shared.windows.filter { $0.isKeyWindow }.first
-        } else {
-            return UIApplication.shared.keyWindow
+        guard let windowScene = UIApplication.shared.connectedScenes
+            .first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene else {
+            return nil
         }
+        return windowScene.windows.first(where: { $0.isKeyWindow })
     }
 
     private static var rootNavigation: UINavigationController? {
@@ -37,8 +38,8 @@ public enum MeasurementWindowManager {
 
     private static let window: MeasurementWindow = {
         let window: MeasurementWindow
-        if #available(iOS 13.0, *),
-           let scene = currentWindow?.windowScene {
+        
+        if let scene = currentWindow?.windowScene {
             window = MeasurementWindow(windowScene: scene)
         } else {
             window = MeasurementWindow(frame: UIScreen.main.bounds)
@@ -52,9 +53,12 @@ public enum MeasurementWindowManager {
     }()
 }
 
+@MainActor
 final class MeasurementWindow: UIWindow {
     override var description: String {
-        "MeasurementWindow is \(isHidden ? "hidden" : "visible")"
+        MainActor.assumeIsolated {
+            "MeasurementWindow is \(isHidden ? "hidden" : "visible")"
+        }
     }
 
     override var windowLevel: UIWindow.Level {
@@ -65,6 +69,7 @@ final class MeasurementWindow: UIWindow {
     }
 }
 
+@MainActor
 final class CustomViewController: UIViewController, MeasurementViewDelegate {
     var attachedWindow: UIWindow? {
         didSet {

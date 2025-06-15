@@ -7,6 +7,7 @@
 
 import UIKit
 
+@MainActor
 protocol MeasurementViewDelegate: AnyObject {
     var attachedWindow: UIWindow? { get }
 }

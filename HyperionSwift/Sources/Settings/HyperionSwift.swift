@@ -7,6 +7,7 @@
 
 import UIKit
 
+@MainActor
 public class HyperionSwift {
 
     private init() {}
@@ -18,13 +19,13 @@ public class HyperionSwift {
     )
 
     public func setup() {
-        if let controller = topViewControoler() {
+        if let controller = topViewController() {
             setup(in: controller)
         }
     }
 
     public func present() {
-        if let controller = topViewControoler() {
+        if let controller = topViewController() {
             present(from: controller)
         }
     }
@@ -37,8 +38,13 @@ public class HyperionSwift {
         menuPresenter.present(from: controller)
     }
 
-    private func topViewControoler() -> UIViewController? {
-        UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.rootViewController
+    private func topViewController() -> UIViewController? {
+        guard let windowScene = UIApplication.shared.connectedScenes
+            .first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene,
+              let keyWindow = windowScene.windows.first(where: { $0.isKeyWindow }) else {
+            return nil
+        }
+        return keyWindow.rootViewController
     }
 }
 

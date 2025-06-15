@@ -7,12 +7,4 @@
 
 import UIKit
 
-public protocol UIViewAnimating {
-    static func animate(
-        withDuration duration: TimeInterval,
-        animations: @escaping () -> Void,
-        completion: ((Bool) -> Void)?
-    )
-}
-
-extension UIView: UIViewAnimating {}
+// UIView already has the animate method we need, so no protocol is necessary

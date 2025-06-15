@@ -7,10 +7,12 @@
 
 import UIKit
 
+@MainActor
 public protocol SideMenuAnimating {
     func animate(in containerView: UIView, to progress: CGFloat)
 }
 
+@MainActor
 public struct SideMenuAnimator: SideMenuAnimating {
     public init() {}
 

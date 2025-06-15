@@ -7,6 +7,7 @@
 
 import UIKit
 
+@MainActor
 public protocol SideMenuDismissInteracting {
     var interactionInProgress: Bool { get }
     var percentDrivenInteractiveTransition: UIPercentDrivenInteractiveTransition { get }
@@ -14,16 +15,19 @@ public protocol SideMenuDismissInteracting {
     func setup(view: UIView, action: @escaping () -> Void)
 }
 
+@MainActor
 public final class SideMenuDismissInteractor: NSObject, SideMenuDismissInteracting {
     override public init() {
         super.init()
     }
 
-    var panGestureRecognizerFactory: (Any?, Selector?) -> UIPanGestureRecognizer
-        = UIPanGestureRecognizer.init(target:action:)
+    var panGestureRecognizerFactory: @MainActor (Any?, Selector?) -> UIPanGestureRecognizer = { target, action in
+        UIPanGestureRecognizer(target: target, action: action)
+    }
 
-    var tapGestureRecognizerFactory: (Any?, Selector?) -> UITapGestureRecognizer
-        = UITapGestureRecognizer.init(target:action:)
+    var tapGestureRecognizerFactory: @MainActor (Any?, Selector?) -> UITapGestureRecognizer = { target, action in
+        UITapGestureRecognizer(target: target, action: action)
+    }
 
     private var action: (() -> Void)?
     private var shouldFinishTransition = false

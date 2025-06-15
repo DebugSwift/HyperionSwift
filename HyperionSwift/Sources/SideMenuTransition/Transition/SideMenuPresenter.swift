@@ -7,11 +7,13 @@
 
 import UIKit
 
+@MainActor
 public protocol SideMenuPresenting {
     func setup(in viewController: UIViewController)
     func present(from viewController: UIViewController)
 }
 
+@MainActor
 public final class SideMenuPresenter: NSObject,
     SideMenuPresenting,
     UIViewControllerTransitioningDelegate {
@@ -20,14 +22,14 @@ public final class SideMenuPresenter: NSObject,
     let presentInteractor: SideMenuPresentInteracting
     let dismissInteractor: SideMenuDismissInteracting
     let menuAnimator: SideMenuAnimating
-    let viewAnimator: UIViewAnimating.Type
+    let viewAnimator: UIView.Type
 
     public init(
         menuViewControllerFactory: UIViewController,
         presentInteractor: SideMenuPresentInteracting = SideMenuPresentInteractor(),
         dismissInteractor: SideMenuDismissInteracting = SideMenuDismissInteractor(),
         menuAnimator: SideMenuAnimating = SideMenuAnimator(),
-        viewAnimator: UIViewAnimating.Type = UIView.self
+        viewAnimator: UIView.Type = UIView.self
     ) {
         self.menuViewControllerFactory = menuViewControllerFactory
         self.presentInteractor = presentInteractor

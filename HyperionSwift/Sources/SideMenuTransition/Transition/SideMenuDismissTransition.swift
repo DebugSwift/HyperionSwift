@@ -11,7 +11,7 @@ public final class SideMenuDismissTransition: NSObject,
     UIViewControllerAnimatedTransitioning {
     public init(
         menuAnimator: SideMenuAnimating,
-        viewAnimator: UIViewAnimating.Type
+        viewAnimator: UIView.Type
     ) {
         self.menuAnimator = menuAnimator
         self.viewAnimator = viewAnimator
@@ -19,7 +19,7 @@ public final class SideMenuDismissTransition: NSObject,
     }
 
     let menuAnimator: SideMenuAnimating
-    let viewAnimator: UIViewAnimating.Type
+    let viewAnimator: UIView.Type
 
     public func transitionDuration(using _: UIViewControllerContextTransitioning?) -> TimeInterval {
         0.25

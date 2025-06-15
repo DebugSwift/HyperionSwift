@@ -5,10 +5,12 @@
 //  Created by Matheus Gois on 02/01/25.
 //
 
-import Foundation
+import UIKit
 
 extension UIWindow {
+    @MainActor
     public static var isEnable = true
+    
     override open func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         super.motionEnded(motion, with: event)
 
@@ -18,7 +20,12 @@ extension UIWindow {
         }
     }
 
+    @MainActor
     public static var keyWindow: UIWindow? {
-        return UIApplication.shared.windows.first
+        guard let windowScene = UIApplication.shared.connectedScenes
+            .first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene else {
+            return nil
+        }
+        return windowScene.windows.first(where: { $0.isKeyWindow })
     }
 }

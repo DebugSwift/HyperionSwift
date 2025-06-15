@@ -1,2 +1,135 @@
+# Xcode
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/project.xcworkspace/
+*.xcodeproj/project.xcworkspace/*
+!*.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+/*.gcno
+**/xcshareddata/WorkspaceSettings.xcsettings
+
+# Xcode 8 and later
+*.xcscmblueprint
+*.xccheckout
+
+# CocoaPods
 Pods/
 Podfile.lock
+
+# Carthage
+Carthage/Build/
+Carthage/Checkouts/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+*.xcodeproj/
+
+# Accio dependency management
+Dependencies/
+.accio/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Code Injection
+iOSInjectionProject/
+
+# Xcode automatically generated files
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift intermediate files
+*.swiftmodule/
+*.swiftdoc
+*.swiftsourceinfo
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# iOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# macOS
+*.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# AppCode
+.idea/
+
+# VSCode
+.vscode/
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# IDEs
+.project
+.metadata
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Build artifacts
+build/
+DerivedData/
+
+# Simulator logs
+*.log
+
+# Archives
+*.xcarchive
+
+# Temporary files
+*.tmp
+*.temp
+
+# User specific
+xcuserdata/
+*.perspectivev3
+*.pbxuser
+*.mode1v3
+*.mode2v3
+
+# Other
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint

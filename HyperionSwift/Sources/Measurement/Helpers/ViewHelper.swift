@@ -13,6 +13,7 @@ enum ViewHelper {
      * @param view The view to find intersecting subviews.
      * @param point The point at which an intersection of the views should be checked.
      */
+    @MainActor
     static func findSubviews(in view: UIView, intersectingPoint point: CGPoint) -> [UIView] {
         var potentialSelectionViews: [UIView] = []
         let subviews = view.subviews
@@ -36,6 +37,7 @@ enum ViewHelper {
      * @param view The view to check.
      * @param point The point to check.
      */
+    @MainActor
     static func view(_ view: UIView, surroundsPoint point: CGPoint) -> Bool {
         guard let superview = view.superview else { return false }
         let viewRect = superview.convert(view.frame, to: MeasurementWindowManager.currentWindow)

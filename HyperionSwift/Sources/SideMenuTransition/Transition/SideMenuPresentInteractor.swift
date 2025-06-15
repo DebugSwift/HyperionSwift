@@ -7,6 +7,7 @@
 
 import UIKit
 
+@MainActor
 public protocol SideMenuPresentInteracting {
     var interactionInProgress: Bool { get }
     var percentDrivenInteractiveTransition: UIPercentDrivenInteractiveTransition { get }
@@ -14,13 +15,15 @@ public protocol SideMenuPresentInteracting {
     func setup(view: UIView, action: @escaping () -> Void)
 }
 
+@MainActor
 public final class SideMenuPresentInteractor: NSObject,
     SideMenuPresentInteracting,
     UIGestureRecognizerDelegate {
     override public init() { super.init() }
 
-    var panGestureRecognizerFactory: (Any?, Selector?) -> UIPanGestureRecognizer
-        = UIPanGestureRecognizer.init(target:action:)
+    var panGestureRecognizerFactory: @MainActor (Any?, Selector?) -> UIPanGestureRecognizer = { target, action in
+        UIPanGestureRecognizer(target: target, action: action)
+    }
 
     private var action: (() -> Void)?
     private var shouldFinishTransition = false

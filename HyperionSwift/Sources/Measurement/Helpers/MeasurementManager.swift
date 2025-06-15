@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+@MainActor
 class MeasurementManager {
     private var measurementViews: [UIView] = []
     private var selectedViewsStyling: [CAShapeLayer] = []

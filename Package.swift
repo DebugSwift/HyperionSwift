@@ -1,11 +1,11 @@
-// swift-tools-version:5.7
+// swift-tools-version:6.0
 import PackageDescription
 
 let package = Package(
     name: "HyperionSwift",
     defaultLocalization: "en",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v16)
     ],
     products: [
         .library(
@@ -19,10 +19,10 @@ let package = Package(
             name: "HyperionSwift",
             dependencies: [],
             path: "HyperionSwift",
-            resources: [
-                .process("Resources")
+            swiftSettings: [
+                .enableExperimentalFeature("StrictConcurrency")
             ]
         )
     ],
-    swiftLanguageVersions: [.v5]
+    swiftLanguageModes: [.v6]
 )

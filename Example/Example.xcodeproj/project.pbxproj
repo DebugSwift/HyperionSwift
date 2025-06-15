@@ -7,214 +7,142 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E055A822D273BA0006FE15A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E055A7C2D273BA0006FE15A /* Preview Assets.xcassets */; };
-		2E055A832D273BA0006FE15A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E055A7E2D273BA0006FE15A /* Assets.xcassets */; };
-		2E055A842D273BA0006FE15A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E055A7F2D273BA0006FE15A /* ContentView.swift */; };
-		2E055A852D273BA0006FE15A /* HyperionSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E055A802D273BA0006FE15A /* HyperionSwiftApp.swift */; };
-		9E0A716BEC23A3382999E4AC /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037001BE97C4AAF8755E8271 /* Pods_Example.framework */; };
+		39634D802DFF4EDB00D2660D /* HyperionSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 39634D7F2DFF4EDB00D2660D /* HyperionSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		037001BE97C4AAF8755E8271 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E0558E82D25E6F8006FE15A /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E055A7C2D273BA0006FE15A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2E055A7E2D273BA0006FE15A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2E055A7F2D273BA0006FE15A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		2E055A802D273BA0006FE15A /* HyperionSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperionSwiftApp.swift; sourceTree = "<group>"; };
-		38DE15FD978C67C1E867805E /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		F901A2028A3B00F8F0A70021 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
+		39634D6D2DFF4E7700D2660D /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		39634D6F2DFF4E7700D2660D /* Example */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Example;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
-		2E0558E52D25E6F8006FE15A /* Frameworks */ = {
+		39634D6A2DFF4E7700D2660D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E0A716BEC23A3382999E4AC /* Pods_Example.framework in Frameworks */,
+				39634D802DFF4EDB00D2660D /* HyperionSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E0558DF2D25E6F8006FE15A = {
+		39634D642DFF4E7700D2660D = {
 			isa = PBXGroup;
 			children = (
-				2E0558E92D25E6F8006FE15A /* Products */,
-				76F5EEEBD300F9D95ED97E92 /* Pods */,
-				6E544D4B913A90D10391181F /* Frameworks */,
-				2E055A812D273BA0006FE15A /* Example */,
+				39634D6F2DFF4E7700D2660D /* Example */,
+				39634D7E2DFF4EDB00D2660D /* Frameworks */,
+				39634D6E2DFF4E7700D2660D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		2E0558E92D25E6F8006FE15A /* Products */ = {
+		39634D6E2DFF4E7700D2660D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2E0558E82D25E6F8006FE15A /* Example.app */,
+				39634D6D2DFF4E7700D2660D /* Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2E055A7D2D273BA0006FE15A /* Preview Content */ = {
+		39634D7E2DFF4EDB00D2660D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2E055A7C2D273BA0006FE15A /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		2E055A812D273BA0006FE15A /* Example */ = {
-			isa = PBXGroup;
-			children = (
-				2E055A7D2D273BA0006FE15A /* Preview Content */,
-				2E055A7E2D273BA0006FE15A /* Assets.xcassets */,
-				2E055A7F2D273BA0006FE15A /* ContentView.swift */,
-				2E055A802D273BA0006FE15A /* HyperionSwiftApp.swift */,
-			);
-			path = Example;
-			sourceTree = "<group>";
-		};
-		6E544D4B913A90D10391181F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				037001BE97C4AAF8755E8271 /* Pods_Example.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		76F5EEEBD300F9D95ED97E92 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				38DE15FD978C67C1E867805E /* Pods-Example.debug.xcconfig */,
-				F901A2028A3B00F8F0A70021 /* Pods-Example.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2E0558E72D25E6F8006FE15A /* Example */ = {
+		39634D6C2DFF4E7700D2660D /* Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2E0558F62D25E6FA006FE15A /* Build configuration list for PBXNativeTarget "Example" */;
+			buildConfigurationList = 39634D782DFF4E7800D2660D /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
-				EEE66B6ADDBF3D5EE3A646BA /* [CP] Check Pods Manifest.lock */,
-				2E0558E42D25E6F8006FE15A /* Sources */,
-				2E0558E52D25E6F8006FE15A /* Frameworks */,
-				2E0558E62D25E6F8006FE15A /* Resources */,
-				71000831BAD3010FA151F0E3 /* [CP] Embed Pods Frameworks */,
+				39634D692DFF4E7700D2660D /* Sources */,
+				39634D6A2DFF4E7700D2660D /* Frameworks */,
+				39634D6B2DFF4E7700D2660D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				39634D6F2DFF4E7700D2660D /* Example */,
+			);
 			name = Example;
+			packageProductDependencies = (
+				39634D7F2DFF4EDB00D2660D /* HyperionSwift */,
+			);
 			productName = Example;
-			productReference = 2E0558E82D25E6F8006FE15A /* Example.app */;
+			productReference = 39634D6D2DFF4E7700D2660D /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2E0558E02D25E6F8006FE15A /* Project object */ = {
+		39634D652DFF4E7700D2660D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1610;
-				LastUpgradeCheck = 1610;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
-					2E0558E72D25E6F8006FE15A = {
-						CreatedOnToolsVersion = 16.1;
+					39634D6C2DFF4E7700D2660D = {
+						CreatedOnToolsVersion = 16.4;
 					};
 				};
 			};
-			buildConfigurationList = 2E0558E32D25E6F8006FE15A /* Build configuration list for PBXProject "Example" */;
+			buildConfigurationList = 39634D682DFF4E7700D2660D /* Build configuration list for PBXProject "Example" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 2E0558DF2D25E6F8006FE15A;
+			mainGroup = 39634D642DFF4E7700D2660D;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				39634D7B2DFF4E8600D2660D /* XCLocalSwiftPackageReference "../../HyperionSwift" */,
+			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 2E0558E92D25E6F8006FE15A /* Products */;
+			productRefGroup = 39634D6E2DFF4E7700D2660D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2E0558E72D25E6F8006FE15A /* Example */,
+				39634D6C2DFF4E7700D2660D /* Example */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2E0558E62D25E6F8006FE15A /* Resources */ = {
+		39634D6B2DFF4E7700D2660D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E055A822D273BA0006FE15A /* Preview Assets.xcassets in Resources */,
-				2E055A832D273BA0006FE15A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		71000831BAD3010FA151F0E3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EEE66B6ADDBF3D5EE3A646BA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		2E0558E42D25E6F8006FE15A /* Sources */ = {
+		39634D692DFF4E7700D2660D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E055A842D273BA0006FE15A /* ContentView.swift in Sources */,
-				2E055A852D273BA0006FE15A /* HyperionSwiftApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		2E0558F42D25E6FA006FE15A /* Debug */ = {
+		39634D762DFF4E7800D2660D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -251,7 +179,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -266,7 +194,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -277,7 +205,7 @@
 			};
 			name = Debug;
 		};
-		2E0558F52D25E6FA006FE15A /* Release */ = {
+		39634D772DFF4E7800D2660D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -314,7 +242,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -323,7 +251,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -333,15 +261,15 @@
 			};
 			name = Release;
 		};
-		2E0558F72D25E6FA006FE15A /* Debug */ = {
+		39634D792DFF4E7800D2660D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38DE15FD978C67C1E867805E /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Example/Preview Content\"";
+				DEVELOPMENT_TEAM = 7NP5RT9Y45;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -349,29 +277,34 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperion.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		2E0558F82D25E6FA006FE15A /* Release */ = {
+		39634D7A2DFF4E7800D2660D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F901A2028A3B00F8F0A70021 /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Example/Preview Content\"";
+				DEVELOPMENT_TEAM = 7NP5RT9Y45;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -379,14 +312,19 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperion.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -396,25 +334,40 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2E0558E32D25E6F8006FE15A /* Build configuration list for PBXProject "Example" */ = {
+		39634D682DFF4E7700D2660D /* Build configuration list for PBXProject "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2E0558F42D25E6FA006FE15A /* Debug */,
-				2E0558F52D25E6FA006FE15A /* Release */,
+				39634D762DFF4E7800D2660D /* Debug */,
+				39634D772DFF4E7800D2660D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2E0558F62D25E6FA006FE15A /* Build configuration list for PBXNativeTarget "Example" */ = {
+		39634D782DFF4E7800D2660D /* Build configuration list for PBXNativeTarget "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2E0558F72D25E6FA006FE15A /* Debug */,
-				2E0558F82D25E6FA006FE15A /* Release */,
+				39634D792DFF4E7800D2660D /* Debug */,
+				39634D7A2DFF4E7800D2660D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		39634D7B2DFF4E8600D2660D /* XCLocalSwiftPackageReference "../../HyperionSwift" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../HyperionSwift;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		39634D7F2DFF4EDB00D2660D /* HyperionSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 39634D7B2DFF4E8600D2660D /* XCLocalSwiftPackageReference "../../HyperionSwift" */;
+			productName = HyperionSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 2E0558E02D25E6F8006FE15A /* Project object */;
+	rootObject = 39634D652DFF4E7700D2660D /* Project object */;
 }

@@ -7,10 +7,12 @@
 
 import UIKit
 
+@MainActor
 protocol MenuDelegate: AnyObject {
     func didSelectMenuItem(_ item: MenuItem)
 }
 
+@MainActor
 final class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     let viewBackground: UIView = {
@@ -87,6 +89,7 @@ final class MenuViewController: UIViewController, UITableViewDataSource, UITable
     // Se precisar de personalizações adicionais, como altura da célula, pode adicionar aqui.
 }
 
+@MainActor
 class MenuCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -109,7 +112,7 @@ class MenuCell: UITableViewCell {
     }
 }
 
-enum MenuItem: CaseIterable {
+enum MenuItem: CaseIterable, Sendable {
     case measurement
 
     var title: String {

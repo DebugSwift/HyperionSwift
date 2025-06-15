@@ -7,6 +7,7 @@
 
 import UIKit
 
+@MainActor
 class MeasurementElementsFactory {
     let styleManager: StyleManager
 

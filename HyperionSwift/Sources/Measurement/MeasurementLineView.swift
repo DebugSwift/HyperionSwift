@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+@MainActor
 class MeasurementsView: UIView {
     private let styleManager = StyleManager()
     private lazy var measurementLabelFactory = MeasurementElementsFactory(styleManager: styleManager)
